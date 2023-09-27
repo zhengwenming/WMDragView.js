@@ -1,5 +1,5 @@
 # WMDragView.js
-可以自由拖拽的悬浮view
+可以自由拖拽的悬浮view，可配置初始化位置和可以自由拖动的范围
 
 1、引入
 import WMDragView from "../../utils/WMDragView.js";
