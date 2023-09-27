@@ -1,15 +1,19 @@
 # WMDragView.js
 可以自由拖拽的悬浮view
 
-1、
+1、引入
+import WMDragView from "../../utils/WMDragView.js";
+
+2、创建dom容器
 ```javascript
 <div class="ball-shape" id="ball"></div>
 ```
 
-2、
+3、初始化，并配置x（WMDragView初始化的x坐标点）、y（MDragView初始化的y坐标点）、minY(WMDragView可以活动到达的最小Y值，默认0)、maxY(WMDragView可以活动到达的最大Y值，默认全屏高度)、minX（WMDragView可以活动到达的左边最小的x坐标值）、maxX（WMDragView可以活动到达的右边最大的x坐标值）
+注意：如果不能拖动，放到nextTick回调中进行初始化
 ```javascript
 mounted () {
-    this.dragview = new DragView('ball', {x:200,y: 200,minY: 10})
+    this.dragview = new WMDragView('ball', {x:200,y: 200,minY: 10})
     this.dragview.onClick = function (coord) {
     }
     this.dragview.onDrag = function (coord) {
