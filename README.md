@@ -4,13 +4,19 @@
 1、引入
 import WMDragView from "../../utils/WMDragView.js";
 
-2、创建dom容器
+2、创建可自由拖动的dom容器。
 ```javascript
 <div id="ball" style="width:100px;height:100px;background-color:aqua;border-radius:50%;"></div>
 ```
 
-3、初始化，并配置x（WMDragView初始化的x坐标点）、y（MDragView初始化的y坐标点）、minY(WMDragView可以活动到达的最小Y值，默认0)、maxY(WMDragView可以活动到达的最大Y值，默认全屏高度)、minX（WMDragView可以活动到达的左边最小的x坐标值）、maxX（WMDragView可以活动到达的右边最大的x坐标值）
-注意：如果不能拖动，放到nextTick回调中进行初始化
+3、初始化，并配置x、y、minY、maxY、minX、maxX。
+x（WMDragView初始化的x坐标点）、
+y（MDragView初始化的y坐标点）、
+minY(WMDragView可以活动到达的最小Y值，默认0)、
+maxY(WMDragView可以活动到达的最大Y值，默认全屏高度)、
+minX（WMDragView可以活动到达的左边最小的x坐标值）、
+maxX（WMDragView可以活动到达的右边最大的x坐标值）
+
 ```javascript
 mounted () {
     this.dragview = new WMDragView('ball', {x:200,y: 200,minY: 10})
@@ -20,6 +26,8 @@ mounted () {
     }
   }
 ```
+
+⚠️PS：如果不能拖动，请将初始化代码放到nextTick回调中
 
 # TweenLite 笔记
 > TweenLite是一个非常快速、轻量级和灵活的动画工具，是GreenSock动画平台（GSAP）的基础。可以单独使用，体积很小, 简单易用
