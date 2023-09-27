@@ -1,5 +1,6 @@
-import { TweenLite } from "gsap/TweenMax"
-
+// import { TweenLite } from "gsap/TweenMax";
+// import {TweenLite} from 'gsap/TweenLite';
+import { TweenLite } from 'gsap';
 /* 
   注意, head需设置viewport
   实例方法:
@@ -32,7 +33,7 @@ class WMDragView {
     this.coord.minX = coordinate.minX?coordinate.minX:0
     this.coord.minY = coordinate.minY?coordinate.minY:0
     this.coord.maxX = coordinate.maxX?coordinate.maxX:window.screen.width-dom.offsetWidth
-    this.coord.maxY = coordinate.maxY?coordinate.maxY:window.screen.height-dom.offsetHeight
+    this.coord.maxY = coordinate.maxY?(coordinate.maxY-dom.offsetHeight):window.screen.height-dom.offsetHeight
 
     // 1.4 绑定数据和dom样式
     Object.defineProperties(this.coord, {
@@ -45,7 +46,6 @@ class WMDragView {
         set: function (value) {
           if (checkCssLength(value) === 'number'){
             let calcRes = value
-            console.log('this.maxX',this.maxX);
             if (calcRes > this.maxX) {
               this._x = this.maxX
             } else if (calcRes < this.minX) {
@@ -74,10 +74,8 @@ class WMDragView {
           if (checkCssLength(value) === 'number') {
             let calcRes = value
             if (calcRes > this.maxY) {
-              console.log('maxY', this.maxY);
               this._y = this.maxY
             } else if (calcRes < this.minY) {
-              console.log('minY', this.minY);
               this._y = this.minY
             } else {
               this._y = calcRes
@@ -118,6 +116,7 @@ class WMDragView {
    */
   _gotoEdge () {
     let config = {}
+	return
     // 左半边则贴左, 右半边则贴右
     if (this.coord.x < this.coord.maxX / 2) {//左边
       config =  {x:this.coord.minX, delay:0.2, ease: Quint.easeOut}
@@ -161,9 +160,8 @@ function endHandler (event) {
 
 function clickHandler () {
   if (this.isMoving) return  
-  const {x, y} = this.coord
   //回调给父元素，如果有注册onClick，那么执行onClick方法
-  this.onClick && this.onClick({x, y})
+  this.onClick && this.onClick(this.coord)
 }
 
 function checkCssLength (val) {
