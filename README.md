@@ -35,7 +35,7 @@ mounted () {
 ## 引入方式
 安装 `gsap`
 ```bash
-npm i gsap --save
+npm i gsap@2.0.2
 ```
 引入 `TweenLite`
 ```javascript
