@@ -1,6 +1,4 @@
-// import { TweenLite } from "gsap/TweenMax";
-// import {TweenLite} from 'gsap/TweenLite';
-import { TweenLite } from 'gsap';
+import { TweenLite } from "gsap/TweenMax";
 /* 
   注意, head需设置viewport
   实例方法:
