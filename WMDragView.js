@@ -24,7 +24,7 @@ class WMDragView {
     this.readyMove = false // a) 点击浮球触发readeyMove
     this.isMoving = false // b) touchmove && readyMove, 触发isMoveing
     // 1.2 初始化dom元素
-    const dom = domEle instanceof HTMLElement ?domEle :document.getElementById(domEle)
+    const dom = domEle instanceof HTMLElement ?domEle :document.querySelector(domEle)
     this.dom = dom
     // 1.3 初始化dom样式, 宽高, 屏幕宽高,可拖动范围（由minX、minY、maxX、maxY共同控制）
     dom.style.position = 'fixed'
