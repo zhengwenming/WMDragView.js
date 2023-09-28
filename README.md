@@ -19,7 +19,7 @@ maxX（WMDragView可以活动到达的右边最大的x坐标值）
 
 ```javascript
 mounted () {
-    this.dragview = new WMDragView('ball', {x:200,y: 200,minY: 10})
+    this.dragview = new WMDragView('.ball', {x:200,y: 200,minY: 10})
     this.dragview.onClick = function (coord) {
     }
     this.dragview.onDrag = function (coord) {
