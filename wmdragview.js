@@ -6,7 +6,7 @@ import { TweenLite } from "gsap/TweenMax";
   onClick(coord) // 点击时触发
 */
 
-class WMDragView {
+class wmdragview {
   /**
    * @param {HTMLElement,String} domeEle 可传入html元素或元素id
    * @param {Number, String} coordinate.x 初始化x坐标, 数字则默认单位为px, 可选单位'vw'
@@ -22,7 +22,7 @@ class WMDragView {
     this.readyMove = false // a) 点击浮球触发readeyMove
     this.isMoving = false // b) touchmove && readyMove, 触发isMoveing
     // 1.2 初始化dom元素
-    const dom = domEle instanceof HTMLElement ?domEle :document.querySelector(domEle)
+    const dom = domEle instanceof HTMLElement ?domEle :(domEle.indexOf('#')===0?document.querySelector(domEle):document.getElementById(domEle))
     this.dom = dom
     // 1.3 初始化dom样式, 宽高, 屏幕宽高,可拖动范围（由minX、minY、maxX、maxY共同控制）
     dom.style.position = 'fixed'
@@ -174,4 +174,4 @@ function checkCssLength (val) {
   }
 }
 
-export default WMDragView;
+export default wmdragview;
