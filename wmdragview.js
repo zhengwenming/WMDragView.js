@@ -114,7 +114,6 @@ class wmdragview {
    */
   _gotoEdge () {
     let config = {}
-	return
     // 左半边则贴左, 右半边则贴右
     if (this.coord.x < this.coord.maxX / 2) {//左边
       config =  {x:this.coord.minX, delay:0.2, ease: Quint.easeOut}
