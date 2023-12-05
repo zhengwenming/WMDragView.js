@@ -22,7 +22,7 @@ class wmdragview {
     this.readyMove = false // a) 点击浮球触发readeyMove
     this.isMoving = false // b) touchmove && readyMove, 触发isMoveing
     // 1.2 初始化dom元素
-    const dom = domEle instanceof HTMLElement ?domEle :(domEle.indexOf('.')==0?document.querySelector(domEle):document.getElementById(domEle))
+    const dom = domEle instanceof HTMLElement ?domEle :(domEle.indexOf('.')==0?document.querySelector(domEle):document.getElementById(domEle.split("#")[1]))
     this.dom = dom
     // 1.3 初始化dom样式, 宽高, 屏幕宽高,可拖动范围（由minX、minY、maxX、maxY共同控制）
     dom.style.position = 'fixed'
@@ -32,7 +32,7 @@ class wmdragview {
     this.coord.minY = coordinate.minY?coordinate.minY:0
     this.coord.maxX = coordinate.maxX?coordinate.maxX:window.screen.width-dom.offsetWidth
     this.coord.maxY = coordinate.maxY?(coordinate.maxY-dom.offsetHeight):window.screen.height-dom.offsetHeight
-
+    console.log('this.coord.maxY=',this.coord.maxY);
     // 1.4 绑定数据和dom样式
     Object.defineProperties(this.coord, {
       x: {
