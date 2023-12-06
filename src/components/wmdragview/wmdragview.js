@@ -30,8 +30,8 @@ class wmdragview {
     this.coord = {}
     this.coord.minX = coordinate.minX?coordinate.minX:0
     this.coord.minY = coordinate.minY?coordinate.minY:0
-    this.coord.maxX = coordinate.maxX?coordinate.maxX:window.screen.width-dom.offsetWidth
-    this.coord.maxY = coordinate.maxY?(coordinate.maxY-dom.offsetHeight):window.screen.height-dom.offsetHeight
+    this.coord.maxX = coordinate.maxX?(coordinate.maxX-dom.offsetWidth):window.innerWidth-dom.offsetWidth
+    this.coord.maxY = coordinate.maxY?(coordinate.maxY-dom.offsetHeight):window.innerHeight-dom.offsetHeight
     console.log('this.coord.maxY=',this.coord.maxY);
     // 1.4 绑定数据和dom样式
     Object.defineProperties(this.coord, {

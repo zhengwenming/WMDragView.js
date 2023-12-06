@@ -1,7 +1,7 @@
 {
     "name": "wmdragview",
     "title": "wmdragview.js",
-    "version": "0.0.1",
+    "version": "0.0.7",
     "description": "JavaScript library for any dragable view",
     "main": "wmdragview.js",
     "files": ["wmdragview.js"],
@@ -14,7 +14,7 @@
       "drag",
       "view",
       "wmdrag",
-      "wmdragview",
+      "WMDragView",
       "free",
       "move",
       "freeball",
@@ -22,7 +22,7 @@
     ],
     "repository": {
       "type": "git",
-      "url": "https://github.com/zhengwenming/WMDragView.js"
+      "url": "https://github.com/zhengwenming/wmragview.js"
     },
     "dependencies": {
       "gsap": "2.0.2"

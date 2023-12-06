@@ -6,19 +6,19 @@ import VConsole from 'vconsole';
 
 const vConsole = new VConsole();
 onMounted(() => {
-  const dragview = new wmdragview('#ball', {x:200,y: 200,minY: 10})
+  const dragview = new wmdragview('#ball', {x:200,y: 200,minY: 0})
     dragview.onClick = function (coord) {
-      console.log(coord);
+      // console.log(coord);
     }
     dragview.onDrag = function (coord) {
-      console.log(coord);
+      // console.log(coord);
     }
 })
 
 </script>
 
 <template>
-  <div>
+  <div class="test-w"> 
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -32,16 +32,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.test-w{
+  width: 200px;
+  height: 100%;
+  background-color: #8e2a2a;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
